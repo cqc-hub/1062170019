@@ -1,0 +1,245 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="css/3.css" type="text/css">
+		
+<script type="text/javascript" src="JS/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="JS/password_strength_plugin.js"></script> 
+<link rel="stylesheet" type="text/css" href="css/password_streng.css"> 
+
+<script type="text/javascript" src="JS/function.js"></script>
+
+<script> 
+$(document).ready( function() { 
+	// 验证用户名密码是否重复
+	$(".password_adv").passStrength({ 
+		userid: "#username" 
+	}); 
+	//密码强弱的验证 
+	$(".password_adv").passStrength({ 
+		//download by http://down.liehuo.net
+		shortPass: "top_shortPass", 
+		badPass: "top_badPass", 
+		goodPass: "top_goodPass", 
+		strongPass: "top_strongPass", 
+		baseStyle: "top_testresult", 
+		userid: "#username", 
+		messageloc: 0 
+	}); 
+}); 
+</script> 
+
+<style type="text/css">
+body{
+	font-family: '黑体';
+	background-color:#f5eee1;
+	margin:0px; 
+	padding:0px;
+	font-size: 14px;
+}
+	
+	.k6{
+		width:994px;
+		height: 80px;
+		margin: 0 auto;
+		border-radius: 10px;
+		border: 3px solid  #E46C14;
+		text-align: center;
+		position:relative;
+		float: left;
+		top: 50px;
+	}
+header{
+	width:1000px;
+	position:relative;
+	margin:0 auto;
+}
+nav{
+	background:url(image/p2.png) repeat-x;
+	width:1000px;
+	position:relative;
+	margin:0 auto;
+}
+ul{
+	margin:0px; 
+	padding:0px;
+	list-style-type:none;
+	height:42px;
+	font-size:14px;
+}
+li{
+	text-align:center;
+	width: 80px;
+	height: 42px;
+	float: left;
+	background-image:url(image/p2.png);
+	background-repeat: repeat-x;
+}
+a{
+	padding:13px 0px 13px 0px;
+	text-decoration:none;
+	display:block;
+}
+a:link,a:visited{
+	color: #fff;
+}
+a:hover {
+	color: #666666;
+	background-image:url(image/p3.png);
+	background-repeat: no-repeat;
+}
+	.bq{
+		margin-top:15px;
+	}
+	.d1{
+	width:994px;
+	margin:0 auto;
+	position:relative;
+	border: 3px solid  #E46C14;
+	top: 10px;
+	height: 40px;
+	border-radius: 10px;
+	
+	}
+	.p1{
+		margin-left: 20px;
+		text-align: center;
+		margin-top: 13px;
+		
+	}
+	.wy1{
+		margin: 0 auto;
+		margin:0 auto;
+		position:relative;
+		width: 1000px;
+		
+	}
+	
+	.nr{
+		position: relative;
+		float: left;
+		left: 120px;
+	}
+	.bt1{
+		font-size: 16px;
+		position: relative;
+		float: left;
+		margin-left: -30px;
+		margin-top: -10px;
+	}
+	
+	.d2{
+	width:994px;
+	height: 620px;
+	margin: 0 auto;
+	position: relative;
+	float: left;
+	top: 20px;
+	border: 3px groove #666;
+	border-radius: 10px;
+	padding-top:  20px;		
+	}
+	
+	.p4{
+		margin-top: 30px;
+		margin-left: -30px;
+		
+		line-height: 3px;
+		
+	}
+
+	.p2{
+		padding-left: 40px;
+	}
+	.p3{
+		padding: 0px 10px;
+		line-height: 20px;
+		text-indent:2em;
+	}
+	
+	 div.name-pop{
+ 		background-color:#EDEDEB;
+ 		position:absolute;
+ 		height:auto;
+ 		left:330px;
+ 		top:55px;
+ 		width:320px;
+ 		border: 1px red solid;
+ 		display:none;
+ 		padding-left:5px;
+		padding-top:5px;
+ 		padding-bottom: 5px;
+ 		padding-right: 5px
+	  }
+	  
+</style>                                                                
+</head>
+<body>
+<header>
+	<img src="image/Z1.jpg" width="1000"  alt="" height="336" />
+</header>
+<nav>
+    
+</nav>
+	
+<article>
+<div class="wy1">
+
+		<div class="d2">
+			<div >
+  <form name="form1" action="register" method="post" autocomplete="off">
+    <h2 align="center">用户注册</h2>
+	 <div class="nr">
+    <p><span>姓名  ：  </span>
+    <input type="text" name="real_name" /> *</p>
+    <p><span> 登录名 ： </span>
+    <input type="text" name="user_name" id="username" placeholder="例如：张三" required autofocus/> *
+    <!--正常提示 Start-->
+                <!-- class属性用于连接css  -->
+            <div id="div_uname_rule" class="name-pop">
+                         ? 4~18个字符，包括中文、字母、数字、下划线<br/>
+                         ? 字母和中文开头，字母和数字结尾，不区分大小写<br/>
+                </div>          
+                <!--正常提示 End-->          
+                <!--错误提示 Start-->
+               <div id="div_uname_err_info" class="name-pop"></div>
+               <!--错误提示 End-->
+    <p>
+      <p><span>输入密码 ：  </span> 
+      <label for="password"></label>
+      <input type="password" name="password" id="password" class="password_adv">
+    *    </p>
+    <p>
+      <p><span>确认密码 ： </span> 
+      <label for="password2"></label>
+      <input type="password" name="password2" id="password2">
+* </p>
+   
+    <p><span>年龄 ：</span>
+      <input type="number" name="real_lage" value="20" min="15" max="120" required/>
+    *</p>
+
+    
+    <p><span>手机号码 ：</span>
+      <input type="tel" name="telphone" pattern="^\d{11}$" required/>
+      *
+        <datalist id="urllist">
+          <option></option>
+          <option></option>
+			
+        </datalist>
+	  </p>
+    <p class="an">
+      <input type="submit" value="提交"/>
+    <input type="reset" value="重置"/>
+  </p></div>
+  </form>
+  
+</div>
+	</div>	
+	</div>
+	
+</article>
+</body>
+</html>

@@ -1,0 +1,58 @@
+登陆练习：
+	
+	1、创建登陆页面
+		创建servlet进行登陆页面请求处理
+	2、点击登陆，完成登陆操作
+		浏览器发送请求道服务器（用户信息+其他数据）
+		服务器调用对应的servlet进行处理
+		设置编码格式
+		获取请求信息
+		处理请求信息
+			
+		响应处理结果
+	3、在servlet中完成用户登陆校验
+			需要连接数据库（在mysql中创建）
+
+	使用MVC思想完成
+		
+		具体过程：
+			1、创建servlet包
+				 PageServlet
+				 loginServlet
+			
+			2、创建pojo包
+				创建User.java{
+					             *1、定义  private int uid;
+	 									  private String uname;
+	  						 			  private String pwd;
+ 					         	*2、source->Generate Getters and Setters ->Select All ->ok
+ 						       *		
+ 						        *3、source->Generate toString()..,->点击Generate
+ 						       *
+ 						         *4、source->Generate hashCode and..,->点击Generate	
+ 						         *5、（手打）
+ 								*   public User() {
+										super();
+		
+											}
+										public User(int uid,String uname,String pwd){
+													super();
+													this.uid=uid;
+													this.uname=uname;
+													this.pwd=pwd;
+													}
+ 			3、在service包里创建impl包
+ 					创建LoginServiceImpl.java									
+			4、创建service包
+				创建LoginService.java (interface类型)
+		    5、回到LoginServlet.java
+		    		获取业务层对象
+		    6、创建dao包
+		    		创建LoginDao.java(interface类型)
+		    		在dao包里创建impl包
+		    		导入jdbc jar包
+		    		在impl里创建LoginDaoImpl
+		    		
+		    		
+		    	
+	

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="yp.cqc.service.SwService"/>
+<fullyQualifiedTypeName name="yp.cqc.service.impl.SwServiceImpl"/>
+<fullyQualifiedTypeName name="javax.xml.registry.infomodel.User"/>
+<fullyQualifiedTypeName name="yp.cqc.dao.UserDao"/>
+<fullyQualifiedTypeName name="yp.cqc.dao.impl.UserDaoImpl"/>
+<fullyQualifiedTypeName name="java.sql.Connection"/>
+<fullyQualifiedTypeName name="javax.print.attribute.standard.PresentationDirection"/>
+<fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
+<fullyQualifiedTypeName name="java.sql.ResultSet"/>
+<fullyQualifiedTypeName name="java.lang.Class"/>
+<fullyQualifiedTypeName name="java.sql.DriverManager"/>
+<fullyQualifiedTypeName name="yp.cqc.pojo.SwUser"/>
+<fullyQualifiedTypeName name="javax.servlet.ServletRequestListener"/>
+<fullyQualifiedTypeName name="javax.servlet.Filter"/>
+<fullyQualifiedTypeName name="javax.servlet.annotation.WebFilter"/>
+<fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
+<fullyQualifiedTypeName name="javax.servlet.http.HttpServletRequest"/>
+<fullyQualifiedTypeName name="javax.faces.event.SystemEvent"/>
+</qualifiedTypeNameHistroy>

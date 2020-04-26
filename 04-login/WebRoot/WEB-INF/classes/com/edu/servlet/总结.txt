@@ -1,0 +1,66 @@
+/*请求中文乱码问题解决
+1、uname=new String(uname.getBytes("iso8859-1"),"utf-8");//使用String进行数据转编码格式（万能）
+
+2、使用公共配置（与请求方式相关）
+	get方式： 
+		步骤1、req.setCharacterEncoding("utf-8");
+		步骤2、在tomat文件的conf修改server.xml
+			<Connector port="8080" protocol="HTTP/1.1"
+       			connectionTimeout="20000"
+       			redirectPort="8443"/>
+       		改成
+       		<Connector port="8080" protocol="HTTP/1.1"
+       		connectionTimeout="20000"
+       		redirectPort="8443"
+  			useBodyEncodingForURI="true"  />
+
+
+	post方式：
+		//设置相应编码格式
+		req.setCharacterEncoding("utf-8");
+*/
+
+/*Servlet流程总结
+ *  	浏览器发起请求到服务器（请求）
+ *  	服务器接收浏览器的请求，进行解析，创建request对象存储请求数据
+ *  	服务器调用对应的servlet进行请求处理，并将request对象作为实参传递给servlet方法
+ *  	servlet的方法执行请求处理
+ *  		//设置请求编码格式
+ *  		//设置响应编码格式
+ *  		//获取请求信息
+ *  		//处理请求信息
+ *  			//创建业务层对象
+ *  			//调用业务层对象方法
+ *  		//响应处理结果
+ * 
+ * 
+ * 
+请求转发:实现多个servlet联动操作处理请求，避免代码冗余，让servlet职责更加明确
+ * 
+ * 	req.getRequestDispatcher("page").forward(req, resp);
+ * 	return;
+ * 特点：
+ * 	一次请求，
+ * 	浏览器地址栏信息不变,
+ * 	会对表单数据进行重复提交
+ * 注意：请求转发后直接return即可（已经做过响应不需要在做响应）
+ * 
+ * 
+ * 
+ * request对象作用域：解决一次请求内不同的servlet的数据共享问题
+ * 		req.setAttribute(object name, object value);
+ * 		req.getAttribute(object obj);
+
+重定向（）
+ * resp.sendRedirect("main");
+ * return;
+ * 特点：
+ * 	避免对表单数据进行重复提交,
+ * 	地址栏信息改变 ，
+ * 	两次请求，两个request对象
+数据流转流程
+ * 		浏览器--->服务器--->数据库
+ * 		数据库--->服务器--->浏览器
+ * 
+ * 
+*/

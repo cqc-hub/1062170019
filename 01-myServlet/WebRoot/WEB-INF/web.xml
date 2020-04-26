@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- 注释快捷键：ctrl+shift+/ -->
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+<!-- 配置servlet -->                                            <!-- servlet技术本质上来说就是一个接口规范 -->
+    <!-- 配置servlet类路径 -->
+       
+       <servlet>
+       
+       <servlet-name>my</servlet-name>          <!-- ~~~~~~~与下面<servlet-mapping>/  <servlet-name></servlet-name>name要一致（不能中文）  -->
+       <servlet-class>com.edu.servlet.MyServlet</servlet-class>   <!-- com.edu.servlet:这个是包名 ；MyServlet：这个是Class类名 -->
+       </servlet>
+ 
+    <!-- 配置访问方式 -->
+
+	<servlet-mapping>                         <!-- 就像是接口   Tomca启动第一个访问的就是它 -->
+	  <servlet-name>my</servlet-name> 	      <!-- ~~~~~~~~~与上面 <servlet>/ <servlet-name>name要一致（不能中文） -->
+	  <url-pattern>/my</url-pattern>          <!-- /my:类似my的子文件  -->
+	</servlet-mapping>
+	
+	<!--配置第二个servlet  -->
+	<servlet>
+	    <servlet-name>my2</servlet-name>
+	    <servlet-class>com.edu.servlet.MyServlet2</servlet-class>
+	</servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ServletLife</servlet-name>
+    <servlet-class>com.edu.servlet.ServletLife</servlet-class>
+  </servlet>
+
+	<servlet-mapping>
+	     <servlet-name>my2</servlet-name>
+	     <url-pattern>/my2</url-pattern>
+	</servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ServletLife</servlet-name>
+    <url-pattern>/life</url-pattern>
+  </servlet-mapping>
+</web-app>

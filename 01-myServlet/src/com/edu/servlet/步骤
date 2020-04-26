@@ -1,0 +1,30 @@
+1、创建 MyServlet类 extends HttpServlet
+2、覆写service方法(手打service alt+"/") ，在service方法中书写逻辑代码
+3、打开WebRoot/WEB-INF/web.xml  ，配置servlet  
+//（清空<web-app></web-app>里面内容重写 //<!-- 配置servlet -->    <!-- 配置servlet类路径 -->   <!-- 配置访问方式 -->）
+
+
+
+
+
+运行流程：【
+
+url: http://localhost:8080/project/my2          
+(在TomCat文件夹内的webapps里 创建project文件夹，复制源代码中的WEB-INF内容)  tomcat目录是 D:\Myeclipse\Tomcat\apache-tomcat-9.0.29\webapps
+
+url组成：{
+    	服务器地址：端口号/webapps下的文件夹名称/要执行的servlet的url-pattern   
+ 		服务器地址：端口号/webapps下的文件夹名称/com.edu.servlet.MyServlet
+	 	服务器地址：端口号/虚拟项目名/servlet的别名
+	 	url：虚拟项目名/servlet的别名
+}		
+】
+
+
+
+
+
+web报错：{ 404   网页：你让我干啥我都知道了，我也去找儿，但没找着啊（资源没找到）
+           505   网页：我找到了 但没这个类（web.xml中<servlet-name>存在  但是 <servlet-class>不存在）
+}
+          

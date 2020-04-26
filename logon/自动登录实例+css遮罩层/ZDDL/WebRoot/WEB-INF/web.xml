@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>ZDDL</display-name>
+  
+  <!-- 全站参数配置 -->
+	<context-param>
+		<description>全站编码配置</description>
+		<param-name>encode</param-name>
+		<param-value>UTF-8</param-value>
+	</context-param>
+
+	<error-page>
+		<exception-type>java.lang.Throwable</exception-type>
+		<location>/error/500.jsp</location>
+	</error-page>
+	<error-page>
+		<error-code>404</error-code>
+		<location>/error/404.jsp</location>
+	</error-page>
+		
+	<!-- 过滤器配置开始 -->
+		<filter>
+			<description>全站乱码过滤器</description>
+			<filter-name>EncodeFilter</filter-name>
+			<filter-class>com.filter.EncodeFilter</filter-class>
+		</filter>
+		<filter-mapping>
+			<filter-name>EncodeFilter</filter-name>
+			<url-pattern>/*</url-pattern>
+		</filter-mapping>
+		<filter>
+			<description>自动登陆过滤器</description>
+			<filter-name>AutologinFilter</filter-name>
+			<filter-class>com.filter.AutologinFilter</filter-class>
+		</filter>
+		<filter-mapping>
+			<filter-name>AutologinFilter</filter-name>
+			<url-pattern>/*</url-pattern>
+		</filter-mapping>
+	<!-- 过滤器配置结束 -->
+	
+	<!-- Servlet配置开始 -->	
+  <servlet>
+    <servlet-name>LoginServlet</servlet-name>
+    <servlet-class>com.web.LoginServlet</servlet-class>
+  </servlet>
+ 
+  <servlet-mapping>
+    <servlet-name>LoginServlet</servlet-name>
+    <url-pattern>/LoginServlet</url-pattern>
+  </servlet-mapping>
+    <!-- Servlet配置结束 -->
+	
+	<!-- 主页配置 -->
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>

@@ -1,0 +1,61 @@
+@charset "utf-8";
+/* CSS Document */
+body{
+	font-size:14px; 
+	font-family:"楷体";
+	margin:0px; 
+	padding:0px;
+	}
+body,form,input,h1,p{
+	padding:0; 
+	margin:0; 
+	border:0; 
+	}
+
+form{
+	width: 650px;
+	height: 500px;
+	margin: 50px auto;
+	padding-left: 30px;
+	position: absolute;
+	left: 148px;
+	top: 14px;
+
+}
+h2{
+	text-align:center;
+	font-size:25px;
+	font-family:"楷体";
+	margin:20px 0; 
+
+}     
+p{margin-top:20px;
+}
+p span{
+	width:80px; 
+	display:inline-block;
+	text-align:right;
+	padding-right:10px;
+}
+p input{
+	width:200px;
+	border:1px solid black;
+    padding:2px;
+
+	
+}
+.lucky input{
+	width:100px;
+	height:24px; 
+}
+.an input{
+	width:100px;
+	height:30px;
+	background:green;
+	margin-top:15px;
+	margin-left:40px;
+	border-radius:15px;
+	font-size:14px;
+	font-family:"楷体";
+	color:#036;
+}
